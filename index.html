@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPrep Sri Lanka — O/L & A/L Exam Preparation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><div class="brand-mark">EP</div>EduPrep</a>
+    <nav class="topnav">
+      <a href="index.html" class="active">Subjects</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <div class="search-box"><input type="text" placeholder="Search lessons, papers, topics..."></div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="shell">
+    <span class="hero-tag">Free for O/L & A/L students</span>
+    <h1>Past papers, questions by lesson, and answers that explain why — all in one place.</h1>
+    <p>Stop hunting across group chats and photocopy shops. Every subject here is broken down lesson by lesson, with past papers, reviews, and quizzes that explain every option, not just the correct one.</p>
+    <div class="hero-actions">
+      <a href="subject.html?id=ict" class="btn btn-dark">Start with ICT →</a>
+      <a href="#how" class="btn btn-outline">How it works</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="shell">
+    <span class="section-label">Subjects</span>
+    <h2 class="section-title">Choose a subject</h2>
+    <div class="subject-grid" id="subjectGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="how" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="shell">
+    <span class="section-label">How it works</span>
+    <h2 class="section-title">Study the way past papers are actually structured</h2>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">Step 1</div>
+        <h4>Pick a subject</h4>
+        <p>ICT and Accounting are live now. More subjects are added lesson by lesson.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Step 2</div>
+        <h4>Open a lesson</h4>
+        <p>Every lesson groups only the past-paper questions that belong to that topic.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Step 3</div>
+        <h4>Practice or read</h4>
+        <p>Work through the paper directly, or take the quiz version with instant explanations.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Step 4</div>
+        <h4>See why, not just what</h4>
+        <p>Every option in every MCQ is explained — including why the wrong ones are wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <span class="section-label">Coming next</span>
+    <h2 class="section-title">Built to grow, one subject at a time</h2>
+    <p style="color:var(--slate); max-width:600px; margin-top:-14px; margin-bottom:26px; font-size:14.5px; line-height:1.6;">
+      Business Studies and Economics are next, followed by video lessons for paper discussions.
+      Papers, reviews, and quizzes stay free — video will be an optional paid add-on, and there'll
+      be a way to support the project directly if you find it useful.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <div class="footer-inner">
+      <a href="index.html" class="brand"><div class="brand-mark">EP</div>EduPrep</a>
+      <div class="footer-links">
+        <a href="subject.html?id=ict">ICT</a>
+        <a href="subject.html?id=accounting">Accounting</a>
+        <a href="#how">How it works</a>
+      </div>
+    </div>
+    <div class="footer-note">EduPrep Sri Lanka — built for O/L & A/L students</div>
+  </div>
+</footer>
+
+<script src="data/content.js"></script>
+<script>
+  const grid = document.getElementById('subjectGrid');
+  SUBJECTS.forEach(s => {
+    const card = document.createElement('a');
+    card.href = `subject.html?id=${s.id}`;
+    card.className = 'subject-card';
+    card.style.setProperty('--card-color', s.color);
+    card.innerHTML = `
+      <div class="subject-head">
+        <div>
+          <span class="subject-level">${s.level}</span>
+          <h3>${s.short}</h3>
+        </div>
+      </div>
+      <p>${s.description}</p>
+      <div class="subject-stats">
+        <div class="subject-stat"><b>${s.lessonCount}</b> lessons</div>
+        <div class="subject-stat"><b>${s.paperCount}</b> papers</div>
+        <div class="subject-stat"><b>${s.questionCount}</b> questions</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  // Placeholder for a subject in progress
+  const comingCard = document.createElement('div');
+  comingCard.className = 'subject-coming';
+  comingCard.innerHTML = `<b>Business Studies</b>Coming soon`;
+  grid.appendChild(comingCard);
+  const comingCard2 = document.createElement('div');
+  comingCard2.className = 'subject-coming';
+  comingCard2.innerHTML = `<b>Economics</b>Coming soon`;
+  grid.appendChild(comingCard2);
+</script>
+
+</body>
+</html>

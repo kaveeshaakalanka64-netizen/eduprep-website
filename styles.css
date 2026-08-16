@@ -293,8 +293,12 @@ footer{border-top:1px solid var(--line); padding:36px 0 26px; margin-top:60px;}
   .topnav, .search-box{display:none;}
   .nav-toggle{display:block; margin-left:auto;}
   .subject-grid{grid-template-columns:1fr;}
+  .paper-row{flex-wrap:wrap;}
+  .paper-actions-{width:100%; margin-top:100px; justify-content:flex-start;}
+  .paper-actions .btn{flex:1; text-align:center;}
   .how-grid{grid-template-columns:1fr 1fr;}
   .lesson-counts{display:none;}
+
   .quiz-card{padding:22px;}
 }
 @media (max-width:560px){

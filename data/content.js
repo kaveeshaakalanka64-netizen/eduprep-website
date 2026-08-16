@@ -169,7 +169,7 @@ const QUIZ_QUESTIONS = {
 // Sample papers listing for a subject
 const PAPERS = {
   ict: [
-    { id: "ict-2023-p1", year: 2023, title: "A/L ICT Paper I", type: "MCQ", questionCount: 50, hasReview: true },
+    { id: "ict-2023-p1", year: 2023, title: "A/L ICT Paper I", type: "MCQ", questionCount: 50, hasReview: true, file: "papers/System Development MCQ , Essey.pdf"},
     { id: "ict-2023-p2", year: 2023, title: "A/L ICT Paper II", type: "Structured & Essay", questionCount: 12, hasReview: true },
     { id: "ict-2022-p1", year: 2022, title: "A/L ICT Paper I", type: "MCQ", questionCount: 50, hasReview: true },
     { id: "ict-2022-p2", year: 2022, title: "A/L ICT Paper II", type: "Structured & Essay", questionCount: 12, hasReview: false },

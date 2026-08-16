@@ -110,7 +110,7 @@
         </div>
         ${p.hasReview ? '<div class="paper-badge">Review available</div>' : ''}
         <div class="paper-actions">
-          <a href="#" class="btn btn-outline btn-sm">View paper</a>
+          <a href="${p.file || '#'}" target="_blank" class="btn btn-outline btn-sm">View paper</a>
         </div>
       `;
       paperList.appendChild(row);
